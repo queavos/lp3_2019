@@ -11,8 +11,7 @@ public class HomeController {
 	return "home/home";	
 	}
 	@RequestMapping (value="/inicio", method=RequestMethod.GET ) 
-	public String goIndex() {
-		
+	public String goIndex() {		
 		return "home/index";
 	}
 }
