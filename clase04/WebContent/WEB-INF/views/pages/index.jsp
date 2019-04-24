@@ -6,8 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<jsp:include page="menu.jsp"></jsp:include>
 <body>
-<jsp:include page="../pages/menu.jsp"></jsp:include>
-<h3>Index</h3>
+<h3>soy pages/index</h3>
 </body>
 </html>

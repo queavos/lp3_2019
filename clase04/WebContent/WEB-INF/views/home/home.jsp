@@ -11,11 +11,12 @@
 <link rel="stylesheet" href="${urlPublic}/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
+<jsp:include page="../pages/menu.jsp"></jsp:include>
 <h1>Hello world - ${urlPublic}</h1>
 <img alt=" " src="${urlPublic}/images/unae.logo.png">
 <ul>
 <c:forEach items="${ peliculas }" var="pelicula">
-			<li>${pelicula.toString()}</li>
+			<li>${pelicula.getTitulo()}</li>
 			</c:forEach>
 			</ul>
 </body>
