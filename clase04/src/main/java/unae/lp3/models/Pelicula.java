@@ -1,6 +1,19 @@
 package unae.lp3.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="Peliculas")
 public class Pelicula {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	//@Column(name="pelicula_titulo", nullable=false)
 	private String titulo;
 	private int duracion;
 	private String clasificacion;
@@ -8,7 +21,6 @@ public class Pelicula {
 	private String imagen;
 	private String fechaEstreno;
 	private String estatus="activa";
-	private int id;
 	public String getTitulo() {
 		return titulo;
 	}
