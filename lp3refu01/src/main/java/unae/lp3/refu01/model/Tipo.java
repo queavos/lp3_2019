@@ -2,6 +2,8 @@ package unae.lp3.refu01.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,10 +11,11 @@ import javax.persistence.Table;
 @Table( name="tipos")
 public class Tipo {
 	@Id
+	@GeneratedValue (strategy= GenerationType.IDENTITY)
 	private int id ;
 	@Column (name="tip_nombre", length=25)
 	private String nombre;
-	@Column (name="estado")
+	@Column (name="tip_estado")
 	private int active=1;
 	public int getId() {
 		return id;
