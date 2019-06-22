@@ -8,19 +8,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Nuevo Tipo</title>
+<link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<script  src="/webjars/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 </head>
 <body>
 <div class="container">
-<h3>Nueva Noticia</h3>
+<h3>Nuevo Tipo</h3>
 <form:form  action="create" method="post" modelAttribute="tipo">
 <label for="nombre"> Nombre:</label>
 <form:input id="nombre" name="nombre" path="nombre" class="form-control"/>
 <br />
 <button type="submit"class="btn" >Guardar</button>
-
+<br />
 </form:form>
-
+<a href="/tipos/" class="btn btn-link" >Volver a Lista </a>
 
 
 
