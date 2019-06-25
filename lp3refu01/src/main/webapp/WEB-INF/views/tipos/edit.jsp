@@ -8,65 +8,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Nuevo Tipo</title>
+<title>Editar Tipo</title>
 <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 <script  src="/webjars/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 </head>
 <body>
 <div class="container">
-<h3>Nuevo Tipo</h3>
-<form:form  action="create" method="post" modelAttribute="tipo">
+<h3>Editar Tipo</h3>
+<form:form  action="tipos/update/" method="post" modelAttribute="tipo">
+<form:input id="id" name="id" path="id"/>
 <label for="nombre"> Nombre:</label>
-<form:input id="nombre" name="nombre" path="nombre" class="form-control" required />
+<form:input id="nombre" name="nombre" path="nombre" class="form-control" />
 <br />
-<button type="submit"class="btn" >Guardar</button>
+<button type="submit"class="btn " >Guardar</button>
 <br />
 </form:form>
 <a href="/tipos/" class="btn btn-link" >Volver a Lista </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</form>
-</div>
-
-</body>
-</html>

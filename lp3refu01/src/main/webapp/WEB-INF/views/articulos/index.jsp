@@ -13,24 +13,28 @@
 </head>
 <body>
 
-<h2>Soy tipos/index</h2>
+<h2>Soy Articulos/index</h2>
 <table  class="table  table-striped" >
 <thead class="thead-dark">
 <tr>
 <th>Id</th>
-<th>Nombre</th>
-<th>Estado</th>
+<th>Titulo</th>
+<th>Contenido</th>
+<th>Fecha</th>
+<th>Tipo</th>
 <th colspan=2><a href="new" class="btn btn-light"> Nuevo</a></th>
 </tr>
 </thead>
 <tbody>
-<c:forEach items="${tipolista}" var="tipo">
+<c:forEach items="${lista}" var="item">
 <tr>
-<td>${tipo.id}</td>
-<td>${tipo.nombre}</td>
-<td>${tipo.active}</td>
-<td><a href="edit/${tipo.id}" class="btn btn-warning">Editar</a></td>
-<td><a href="delete/${tipo.id}" class="btn btn-danger">Borrar</a></td>
+<td>${item.id}</td>
+<td>${item.titulo}</td>
+<td>${item.contenido}</td>
+<td>${item.fecha}</td>
+<td>${item.tipo.nombre}</td>
+<td><a href="edit/${item.id}" class="btn btn-warning">Editar</a></td>
+<td><a href="delete/${item.id}" class="btn btn-danger">Borrar</a></td>
 </tr>
 </c:forEach>
 </table>

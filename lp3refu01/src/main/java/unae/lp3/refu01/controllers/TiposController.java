@@ -1,11 +1,13 @@
 package unae.lp3.refu01.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,6 +25,8 @@ public class TiposController {
 		model.addAttribute("tipolista", tipolista);
 		return "tipos/index";
 	}
+	
+	// CREAR REGISTRO
 	@RequestMapping(value="/new", method= RequestMethod.GET)
 	public String nuevo(@ModelAttribute Tipo tipo, Model model) 
 	{ 
@@ -35,7 +39,37 @@ public class TiposController {
 		tiposrepo.save(tipo);
 		return "redirect:/tipos/"; 
 	}	
-		
+	//EDITAR REGISTROS
+	@RequestMapping(value="/edit/{id}", method= RequestMethod.GET)
+	public String editar(@ModelAttribute Tipo tipo, Model model, @PathVariable("id") int id) 
+	{ 
+		Tipo tip= new Tipo();
+		Optional<Tipo> t= tiposrepo.findById(id);
+		if (t.isPresent())
+		{ 
+			tip=t.get();
+		}
+		model.addAttribute("tipo", tip);
+		return "tipos/edit"; 
+	}	
+	@RequestMapping(value="/update", method= RequestMethod.POST)
+	public String modificar(Tipo tipo, Model model) 
+	{ 
+		tiposrepo.save(tipo);
+		return "redirect:/tipos/"; 
+	}
+	
+	//BORRAR REGISTROS
+	@RequestMapping(value="/delete/{id}", method= RequestMethod.GET)
+	public String borrar( @PathVariable("id") int id) 
+	{ 
+		Optional<Tipo> t= tiposrepo.findById(id);
+		if (t.isPresent())
+		{
+			tiposrepo.deleteById(id);
+		}
+		return "redirect:/tipos/"; 
+	}	
 	
 	
 //	Muestra agregar

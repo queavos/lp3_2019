@@ -16,14 +16,28 @@
 <body>
 <div class="container">
 <h3>Nuevo Tipo</h3>
-<form:form  action="create" method="post" modelAttribute="tipo">
-<label for="nombre"> Nombre:</label>
-<form:input id="nombre" name="nombre" path="nombre" class="form-control" required />
+<form:form  action="create" method="post" modelAttribute="articulo">
+<label for="titulo"> Titulo:</label>
+<form:input id="titulo"  name="titulo"  path="titulo" class="form-control"  />
+<br />
+<label for="contenido"> Contenido:</label>
+<form:textarea path="contenido"  row="5" col="30" class="form-control" /> 
+
+<br />
+<label for="fecha"> Fecha:</label>
+
+<form:input type="date" id="fecha"  name="fecha"  path="fecha" class="form-control"  />
+<br />
+<label for="tipo"> Tipo:</label>
+<form:select path="tipo"   > 
+<form:options items="${tipos}" itemValue="id" itemLabel="nombre"/>
+
+</form:select>
 <br />
 <button type="submit"class="btn" >Guardar</button>
 <br />
 </form:form>
-<a href="/tipos/" class="btn btn-link" >Volver a Lista </a>
+<a href="/articulos/" class="btn btn-link" >Volver a Lista </a>
 
 
 
