@@ -18,7 +18,7 @@
 <h3>Nuevo Tipo</h3>
 <form:form  action="create" method="post" modelAttribute="tipo">
 <label for="nombre"> Nombre:</label>
-<form:input id="nombre" name="nombre" path="nombre" class="form-control" required />
+<form:input id="nombre" name="nombre" path="nombre" class="form-control"  />
 <br />
 <button type="submit"class="btn" >Guardar</button>
 <br />

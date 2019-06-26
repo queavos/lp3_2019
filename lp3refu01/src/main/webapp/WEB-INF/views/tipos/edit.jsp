@@ -16,8 +16,8 @@
 <body>
 <div class="container">
 <h3>Editar Tipo</h3>
-<form:form  action="tipos/update/" method="post" modelAttribute="tipo">
-<form:input id="id" name="id" path="id"/>
+<form:form  action="/tipos/update/" method="post" modelAttribute="tipo">
+<form:input type="hidden" id="id" name="id" path="id"/>
 <label for="nombre"> Nombre:</label>
 <form:input id="nombre" name="nombre" path="nombre" class="form-control" />
 <br />
